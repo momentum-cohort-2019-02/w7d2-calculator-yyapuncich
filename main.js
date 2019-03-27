@@ -8,7 +8,7 @@ const clearButton = document.querySelector('.clear')
 const equalButton = document.querySelector('.equal')
 const decimalButton = document.querySelector('.dot')
 
-// operands all
+// all buttons
 const allButtons = document.querySelectorAll('.p')
 
 // blank line
@@ -23,7 +23,11 @@ for (let button of allButtons) {
 
 // display total
 equalButton.addEventListener('click', function () {
-    return outputLine.innerText = eval(outputLine.innerText)
+    if (isFinite(math.eval(outputLine.innerText))) {
+        return outputLine.innerText = math.eval(outputLine.innerText) 
+    } else {
+        return outputLine.innerText = "Dunno."
+    }
 })
 
 // clear outputLine
